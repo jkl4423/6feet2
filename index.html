@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6feet2 – Design-Varianten</title>
+<style>
+  :root { --bg: #16161A; --fg: #F2F1EC; --muted: #8E8D96; --line: #2A2A31; --acc: #C9A96A; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  body { display: flex; flex-direction: column; }
+  header { display: flex; align-items: center; gap: 16px; padding: 10px 16px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  header .brand { font-weight: 600; font-size: 14px; letter-spacing: 0.5px; margin-right: 8px; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tabs button { background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .tabs button:hover { color: var(--fg); border-color: var(--muted); }
+  .tabs button[aria-current="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+  .spacer { flex: 1; }
+  .tools { display: flex; align-items: center; font-size: 13px; color: var(--muted); }
+  .tools a { color: var(--muted); font-size: 12px; text-decoration: none; }
+  .tools a:hover { color: var(--fg); }
+  main { flex: 1; display: flex; justify-content: center; background: #0E0E11; overflow: auto; }
+  iframe { border: 0; background: #fff; width: 100%; height: 100%; display: block; }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">6feet2 · Design-Varianten</span>
+  <nav class="tabs" id="tabs" aria-label="Varianten"></nav>
+  <span class="spacer"></span>
+  <div class="tools">
+    <a id="open" href="#" target="_blank" rel="noopener">Variante allein öffnen ↗</a>
+  </div>
+</header>
+<main id="main">
+  <iframe id="frame" title="Variante"></iframe>
+</main>
+<script>
+  var variants = [
+    { id: 'A', file: 'Main', label: 'A · Vinyl & Neon' },
+    { id: 'B', file: 'Elegant', label: 'B · Abendgarderobe' },
+    { id: 'C', file: 'Editorial', label: 'C · Stage Light' },
+    { id: 'D', file: 'Setlist', label: 'D · Setlist-Poster' },
+    { id: 'E', file: 'Minimal', label: 'E · Minimal Dunkel' },
+    { id: 'F', file: 'Bunt', label: 'F · Farbenfroh' },
+    { id: 'F0', file: 'BuntGelb', label: 'G · Farbenfroh Gelb' }
+  ];
+  var tabs = document.getElementById('tabs'), frame = document.getElementById('frame'), open = document.getElementById('open');
+  function show(id) {
+    var v = variants.find(function (x) { return x.id === id; }) || variants[0];
+    frame.src = 'variants/' + v.file + '.html';
+    open.href = frame.src;
+    document.title = '6feet2 – ' + v.label;
+    tabs.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-current', b.dataset.id === v.id ? 'true' : 'false'); });
+    if (location.hash !== '#' + v.id) history.replaceState(null, '', '#' + v.id);
+  }
+  variants.forEach(function (v) {
+    var b = document.createElement('button'); b.textContent = v.label; b.dataset.id = v.id;
+    b.addEventListener('click', function () { show(v.id); });
+    tabs.appendChild(b);
+  });
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    var i = variants.findIndex(function (x) { return '#' + x.id === location.hash; });
+    if (i < 0) i = 0;
+    i = (i + (e.key === 'ArrowRight' ? 1 : variants.length - 1)) % variants.length;
+    show(variants[i].id);
+  });
+  show(location.hash.slice(1) || 'A');
+</script>
+</body>
+</html>

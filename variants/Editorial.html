@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6feet2 – C · Stage Light</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Space+Mono:wght@400;700&display=swap">
+<style>
+body{margin:0;background:#07070A;min-width:1200px}
+a{color:#F4F2EC}a:hover{color:#E4FF1A}
+/* Höhenleiste rechts: eingeklappt 56px, on-hover ausgeklappt mit Menü */
+#ruler{position:fixed;right:0;top:0;bottom:0;width:56px;z-index:10;background:#07070A;border-left:1px solid #2A2A33;overflow:hidden;transition:width .45s cubic-bezier(.2,.8,.2,1)}
+#ruler::before{content:"";position:absolute;left:0;top:0;bottom:0;width:18px;background-image:repeating-linear-gradient(180deg,#3A3A45 0 1px,transparent 1px 10px),repeating-linear-gradient(180deg,#F4F2EC 0 1px,transparent 1px 120px);background-size:10px 100%,18px 100%;background-repeat:repeat-y;background-position:left top,left top}
+#ruler:hover,#ruler.open{width:320px}
+#ruler .tag{position:absolute;left:30px;top:140px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;letter-spacing:3px;color:#E4FF1A;white-space:nowrap;transition:opacity .2s}
+#ruler:hover .tag,#ruler.open .tag{opacity:0}
+#ruler .menu{position:absolute;left:56px;right:0;top:0;bottom:0;opacity:0;transition:opacity .3s .15s}
+#ruler:hover .menu,#ruler.open .menu{opacity:1}
+#ruler .menu a{position:absolute;left:0;transform:translateY(-50%);text-decoration:none;font-size:15px;text-transform:uppercase;letter-spacing:3px;white-space:nowrap;display:flex;align-items:baseline;gap:16px}
+#ruler .menu a::before{content:"";position:absolute;left:-38px;top:50%;width:26px;height:1px;background:#2A2A33}
+#ruler .menu a small{font-size:10px;color:#E4FF1A;letter-spacing:2px}
+#ruler .menu a.cta{background:#E4FF1A;color:#07070A;padding:12px 18px;font-weight:700}
+#ruler .menu a.cta small{color:#07070A}
+#ruler .menu a.cta:hover{color:#07070A;background:#F4F2EC}
+#ruler .menu .ft{position:absolute;left:-36px;transform:translateY(-50%);font-size:9px;color:#8E8D96;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div style="font-family: 'Space Mono', monospace; color: #F4F2EC; background: #07070A; min-height: 100%; box-sizing: border-box; position: relative">
+
+  <aside id="ruler" aria-label="Hauptnavigation">
+    <span class="tag" aria-hidden="true">6 FT 2 · MENÜ</span>
+    <nav class="menu">
+      <a href="#" style="top: 120px"><small>01</small>Repertoire</a>
+      <a href="#" style="top: 240px"><small>02</small>Band</a>
+      <a href="#" style="top: 360px"><small>03</small>FAQ</a>
+      <a href="#" class="cta" style="top: 480px"><small>04</small>Anfrage</a>
+    </nav>
+  </aside>
+
+  <nav style="margin-right: 56px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 40px; font-size: 13px; text-transform: uppercase; letter-spacing: 2px">
+    <img src="../media/logo_light.png" alt="6feet2 Music" style="height: 32px; width: auto; display: block">
+    <span aria-hidden="true" style="font-size: 11px; letter-spacing: 3px; color: #8E8D96">Menü →</span>
+  </nav>
+
+  <section style="margin-right: 56px; position: relative; height: clamp(480px, 68vh, 680px); overflow: hidden; display: flex; align-items: flex-end">
+    <video src="../media/hero.mp4" poster="../media/hero_poster.jpg" autoplay muted loop playsinline aria-label="Liveausschnitt 6feet2" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: contrast(1.2) saturate(1.4) brightness(0.7)"></video>
+    <h1 style="position: relative; margin: 0; padding: 0 40px 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 236px; line-height: 0.95; text-transform: uppercase; letter-spacing: -4px; color: #F4F2EC; mix-blend-mode: difference">Tanz<br>fläche<span style="color: #E4FF1A; mix-blend-mode: normal">.</span></h1>
+  </section>
+
+  <section style="margin-right: 56px; padding: 56px 40px; display: flex; gap: 48px; align-items: center; border-bottom: 1px solid #2A2A33">
+    <p style="flex: 1 1 0; min-width: 0; margin: 0; font-size: 22px; line-height: 1.5; color: #D9D6CE">Rock und Pop, 70er bis heute. Live für Hochzeiten, Firmenfeiern und Feste in [REGION]. Wir bringen Sound, Licht und 150 Songs – ihr bringt die Gäste.</p>
+    <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #8E8D96">
+      <span><span style="color: #E4FF1A">01</span> Hochzeit</span>
+      <span><span style="color: #E4FF1A">02</span> Firmenfeier</span>
+      <span><span style="color: #E4FF1A">03</span> Fest</span>
+    </div>
+  </section>
+
+  <section style="margin-right: 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))">
+    <img src="../media/bandfoto.jpg" alt="Die Band 6feet2 im Sonnenuntergang" style="width: 100%; height: 100%; aspect-ratio: 5 / 4; object-fit: cover; display: block; filter: contrast(1.1)">
+    <div style="padding: 48px 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; border-left: 1px solid #2A2A33">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: #E4FF1A">Repertoire</div>
+        <div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; text-transform: uppercase; display: flex; flex-direction: column; gap: 6px">
+          <span>Don't Stop Me Now</span><span style="color: #8E8D96">Livin' on a Prayer</span><span>Wonderwall</span><span style="color: #8E8D96">Uptown Funk</span><span>Blinding Lights</span><span style="color: #8E8D96">Flowers</span>
+        </div>
+      </div>
+      <a href="#" style="text-decoration: none; align-self: flex-start; border: 1px solid #F4F2EC; padding: 16px 24px; font-size: 13px; text-transform: uppercase; letter-spacing: 2px">Alle Songs →</a>
+    </div>
+  </section>
+
+  <section style="margin-right: 56px; padding: 96px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px">
+    <h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 96px; line-height: 0.9; text-transform: uppercase; letter-spacing: -2px">Datum<br>frei?</h2>
+    <a href="#" style="text-decoration: none; background: #E4FF1A; color: #07070A; padding: 28px 48px; font-size: 15px; text-transform: uppercase; letter-spacing: 3px; font-weight: 700">Anfrage stellen →</a>
+  </section>
+
+  <footer style="margin-right: 56px; padding: 20px 40px; border-top: 1px solid #2A2A33; display: flex; justify-content: space-between; gap: 16px; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #8E8D96">
+    <div>6feet2 · [Region]</div>
+    <div style="display: flex; gap: 24px"><a href="#" style="color: #8E8D96; text-decoration: none">Instagram</a><a href="#" style="color: #8E8D96; text-decoration: none">Impressum</a><a href="#" style="color: #8E8D96; text-decoration: none">Datenschutz</a></div>
+  </footer>
+</div>
+<script src="hero-player.js"></script>
+<script>
+  // Intro: Menü fährt nach dem Laden auf, bleibt 1 s offen und schließt dann; danach nur noch Hover
+  (function(){
+    var r = document.getElementById('ruler');
+    setTimeout(function(){ r.classList.add('open'); }, 400);      // aufgehen
+    setTimeout(function(){ r.classList.remove('open'); }, 400 + 450 + 1000);  // Animation + 1 s offen, dann zu
+  })();
+</script>
+</body>
+</html>

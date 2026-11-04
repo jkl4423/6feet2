@@ -1,0 +1,5 @@
+# IDE
+.idea/
+
+# lokale Notizen und Planung, nicht im Repo
+doc/

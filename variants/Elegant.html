@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6feet2 – B · Abendgarderobe</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@400;500&display=swap">
+<style>
+body{margin:0;background:#101214;min-width:1200px}
+a{color:#EDE8DF}a:hover{color:#C9A96A}
+/* Massband-Nav: kompakt 72px, on-hover 120px */
+#tape-nav{height:72px;transition:height .45s cubic-bezier(.2,.8,.2,1)}
+#tape-nav:hover{height:120px}
+#tape-nav .tick{transition:height .45s cubic-bezier(.2,.8,.2,1)}
+#tape-nav .tick.inch{height:7px}#tape-nav .tick.half{height:12px}#tape-nav .tick.foot{height:20px}
+#tape-nav:hover .tick.inch{height:10px}#tape-nav:hover .tick.half{height:18px}#tape-nav:hover .tick.foot{height:28px}
+#tape-nav .ft{opacity:0;transition:opacity .3s}
+#tape-nav:hover .ft{opacity:1}
+#tape-nav .item{transition:opacity .3s}
+#tape-nav .item img{height:30px;transition:height .45s cubic-bezier(.2,.8,.2,1)}
+#tape-nav:hover .item img{height:36px}
+#tape-nav .ptr{transition:left .45s cubic-bezier(.2,.8,.2,1)}
+#tape-nav[data-ease] .tick{transition:height .45s cubic-bezier(.2,.8,.2,1),left .45s cubic-bezier(.2,.8,.2,1)}
+#tape-nav[data-ease] .ft{transition:opacity .3s,left .45s cubic-bezier(.2,.8,.2,1)}
+#tape-nav[data-ease] .item{transition:opacity .3s,left .45s cubic-bezier(.2,.8,.2,1),transform .45s cubic-bezier(.2,.8,.2,1)}
+</style>
+</head>
+<body>
+<div style="font-family: 'Jost', system-ui, sans-serif; color: #EDE8DF; background: #101214; min-height: 100%; box-sizing: border-box">
+
+  <nav aria-label="Hauptnavigation" id="tape-nav" style="position: sticky; top: 0; z-index: 20; background: #101214; overflow: hidden; border-bottom: 2px solid #EDE8DF; font-family: 'IBM Plex Mono', monospace; cursor: default"></nav>
+
+  <section style="position: relative; height: clamp(440px, 64vh, 640px); background: #1C1F23; display: flex; align-items: flex-end; overflow: hidden">
+    <video src="../media/hero.mp4" poster="../media/hero_poster.jpg" autoplay muted loop playsinline aria-label="Liveausschnitt 6feet2" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.55) saturate(0.9)"></video>
+    <div style="position: relative; padding: 64px; display: flex; flex-direction: column; gap: 20px; max-width: 760px">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #C9A96A">1,88 m · die Höhe unseres ersten Proberaums</div>
+      <h1 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 88px; line-height: 1">Livemusik,<br><em>die alle auf die Beine bringt.</em></h1>
+      <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #C8C2B6; max-width: 520px">Rock und Pop von den 70ern bis heute – für Hochzeiten, Firmenfeiern und Feste in [REGION].</p>
+    </div>
+  </section>
+
+  <section style="padding: 96px 64px; display: flex; gap: 64px; align-items: center">
+    <img src="../media/bandfoto.jpg" alt="Die Band 6feet2 liegend auf einer Landstraße im Sonnenuntergang" style="flex: 1 1 0; min-width: 0; aspect-ratio: 16 / 10; object-fit: cover; display: block">
+    <div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 500; line-height: 1.1">Von Queen bis Dua Lipa.</h2>
+      <p style="margin: 0; color: #B6AFA2; line-height: 1.7; font-size: 17px">Über 150 Songs aus fünf Jahrzehnten, vom ruhigen Dinner-Set bis zur letzten Zugabe. Mit eigener Technik, damit ihr euch um nichts kümmern müsst.</p>
+      <a href="#" style="text-decoration: none; align-self: flex-start; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; border-bottom: 1px solid #C9A96A; padding-bottom: 6px">Repertoire ansehen</a>
+    </div>
+  </section>
+
+  <section style="margin: 0 64px 96px; padding: 72px; border: 1px solid #2E3237; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center">
+    <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500">Ist euer Datum noch frei?</h2>
+    <p style="margin: 0; color: #B6AFA2; max-width: 480px; line-height: 1.6">Datum, Ort, Anlass – mehr brauchen wir für den ersten Schritt nicht.</p>
+    <a href="#" style="text-decoration: none; background: #C9A96A; color: #101214; padding: 18px 40px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 2px; text-transform: uppercase; font-size: 13px; font-weight: 500; margin-top: 8px">Anfrage stellen</a>
+  </section>
+
+  <footer style="padding: 24px 64px; border-top: 1px solid #2E3237; display: flex; justify-content: space-between; gap: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #7F786C">
+    <div>6feet2 · [Region]</div>
+    <div style="display: flex; gap: 28px"><a href="#" style="color: #7F786C; text-decoration: none">Instagram</a><a href="#" style="color: #7F786C; text-decoration: none">Impressum</a><a href="#" style="color: #7F786C; text-decoration: none">Datenschutz</a></div>
+  </footer>
+</div>
+
+<script>
+/* Massband-Navigation: 0 ft rechts, 7 ft links. Die Striche sind gequetscht und
+   gehen um den Mauszeiger wie eine Ziehharmonika auseinander. Logo (6 ft 2) und
+   Menuepunkte (1 bis 4 ft) wachsen, wenn der Zeiger in der Naehe ist. */
+(function(){
+  var TOTAL = 84, PAD = 72, ACC = '#C9A96A';
+  var SIGMA = 120, AMP = 2.4, GROW_LABEL = 0.45, GROW_LOGO = 0.7;
+  var items = [
+    {label:'6feet2',     at:74, logo:true},
+    {label:'Repertoire', at:48},
+    {label:'Band',       at:36},
+    {label:'Fragen',     at:24},
+    {label:'Anfrage',    at:12}
+  ];
+  var nav = document.getElementById('tape-nav');
+  var ticks = [], labels = [], active = 74, mouseX = null;
+
+  for (var i = 0; i <= TOTAL; i++){
+    var foot = i % 12 === 0, half = i % 6 === 0;
+    var t = document.createElement('span'); t.setAttribute('aria-hidden','true');
+    t.className = 'tick ' + (foot ? 'foot' : half ? 'half' : 'inch');
+    t.style.cssText = 'position:absolute;bottom:0;width:1px;background:'+(foot?'#EDE8DF':half?'#8A8E95':'#4A4F55')+';pointer-events:none';
+    nav.appendChild(t); ticks.push(t);
+    if (foot){
+      var n = document.createElement('span'); n.setAttribute('aria-hidden','true'); n.className = 'ft';
+      n.textContent = (i/12) + ' ft';
+      n.style.cssText = 'position:absolute;bottom:32px;font-size:10px;color:#8A8E95;letter-spacing:1px;transform:translateX(-50%);pointer-events:none';
+      nav.appendChild(n); labels.push({el:n, at:i});
+    }
+  }
+
+  items.forEach(function(d){
+    var a = document.createElement('a'); a.href = '#'; a.className = 'item';
+    a.style.cssText = 'position:absolute;top:14px;text-decoration:none;display:flex;flex-direction:column;align-items:center;white-space:nowrap;transform-origin:50% 0';
+    if (d.logo){
+      var img = document.createElement('img'); img.src = '../media/logo_light.png'; img.alt = '6feet2 Music – Start';
+      img.style.cssText = 'width:auto;display:block'; a.appendChild(img);
+    } else {
+      var s = document.createElement('span'); s.style.cssText = 'font-size:14px;text-transform:uppercase;letter-spacing:2px;transition:color .3s';
+      s.textContent = d.label; a.appendChild(s);
+    }
+    a.addEventListener('click', function(e){ e.preventDefault(); active = d.at; render(); });
+    nav.appendChild(a); labels.push({el:a, at:d.at, item:d});
+  });
+
+  var ptr = document.createElement('span'); ptr.setAttribute('aria-hidden','true'); ptr.className = 'ptr';
+  ptr.style.cssText = 'position:absolute;top:0;bottom:0;width:2px;background:'+ACC+';pointer-events:none';
+  nav.appendChild(ptr);
+
+  function positions(){
+    var W = nav.clientWidth, span = W - 2*PAD, base = span/TOTAL, xs = [], i;
+    if (mouseX === null){ for (i = 0; i <= TOTAL; i++) xs.push(W - PAD - i*base); return xs; }
+    var w = [], sum = 0;
+    for (i = 1; i <= TOTAL; i++){
+      var cx = W - PAD - (i - 0.5)*base, d = (cx - mouseX)/SIGMA;
+      var wi = 1 + AMP*Math.exp(-d*d); w.push(wi); sum += wi;
+    }
+    xs.push(W - PAD);
+    var acc = 0;
+    for (i = 1; i <= TOTAL; i++){ acc += w[i-1]; xs.push(W - PAD - span*acc/sum); }
+    return xs;
+  }
+
+  function render(){
+    var xs = positions();
+    ticks.forEach(function(t, i){ t.style.left = xs[i] + 'px'; });
+    labels.forEach(function(l){
+      var x = xs[l.at]; l.el.style.left = x + 'px';
+      if (!l.item) return;
+      var g = 0;
+      if (mouseX !== null){ var d = (x - mouseX)/(SIGMA*0.9); g = Math.exp(-d*d); }
+      var s = 1 + (l.item.logo ? GROW_LOGO : GROW_LABEL)*g;
+      l.el.style.transform = 'translateX(-50%) scale(' + s.toFixed(3) + ')';
+      if (!l.item.logo){
+        var sel = l.item.at === active;
+        l.el.firstChild.style.color = (sel || g > 0.5) ? ACC : '#EDE8DF';
+        l.el.style.opacity = (sel || g > 0.2) ? 1 : 0.75;
+      }
+    });
+    ptr.style.left = (xs[active] - 1) + 'px';
+  }
+
+  function ease(on){ if (on) nav.setAttribute('data-ease',''); else nav.removeAttribute('data-ease'); }
+  nav.addEventListener('mouseenter', function(){ ease(true); setTimeout(function(){ ease(false); }, 450); });
+  nav.addEventListener('mousemove', function(e){ mouseX = e.clientX - nav.getBoundingClientRect().left; render(); });
+  nav.addEventListener('mouseleave', function(){ ease(true); mouseX = null; render(); });
+  window.addEventListener('resize', render);
+  render();
+})();
+</script>
+<script src="hero-player.js"></script>
+</body>
+</html>
