@@ -6,19 +6,37 @@
 <title>6feet2 – A · Vinyl & Neon</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;700&display=swap">
 <style>
-body{margin:0;background:#17120F;min-width:1200px}
+body{margin:0;background:#17120F}
 a{color:#F2E9DD}a:hover{color:#FF7A3D}
 .marquee{display:flex;width:max-content;animation:marquee 48s linear infinite}
 .marquee span{flex:none}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Mobile */
+@media (max-width: 767px){
+[data-m=nav]{padding:14px 20px !important;gap:12px !important;flex-wrap:wrap !important}
+[data-m=logo]{height:30px !important}
+[data-m=links]{gap:14px !important;font-size:12px !important;letter-spacing:1px !important}
+[data-m=links] a:last-child{padding:10px 16px !important}
+[data-m=hero]{margin:0 16px !important;height:auto !important;min-height:520px !important;border-radius:16px !important}
+[data-m=hero-text]{padding:24px !important}
+[data-m=h1]{font-size:60px !important}
+[data-m=hero-p]{font-size:16px !important}
+[data-m=band]{margin-top:24px !important;font-size:20px !important}
+[data-m=about]{flex-direction:column !important;padding:56px 20px !important;gap:28px !important}
+[data-m=about] img{width:100% !important}
+[data-m=h2]{font-size:48px !important}
+[data-m=footer]{flex-direction:column !important;padding:20px !important;gap:12px !important}
+[data-m=footer-links]{gap:16px !important}
+}
 </style>
 </head>
 <body>
 <div style="font-family: 'Work Sans', system-ui, sans-serif; color: #F2E9DD; background: #17120F; min-height: 100%; box-sizing: border-box">
 
-  <nav style="position: sticky; top: 0; z-index: 20; background: #17120F; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 48px">
-    <img src="../media/logo_light.png" alt="6feet2 Music" style="height: 40px; width: auto; display: block">
-    <div style="display: flex; align-items: center; gap: 32px; font-size: 15px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px">
+  <nav data-m="nav" style="position: sticky; top: 0; z-index: 20; background: #17120F; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 48px">
+    <img data-m="logo" src="../media/logo_light.png" alt="6feet2 Music" style="height: 40px; width: auto; display: block">
+    <div data-m="links" style="display: flex; align-items: center; gap: 32px; font-size: 15px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px">
       <a href="#" style="text-decoration: none">Repertoire</a>
       <a href="#" style="text-decoration: none">Band</a>
       <a href="#" style="text-decoration: none">FAQ</a>
@@ -26,33 +44,33 @@ a{color:#F2E9DD}a:hover{color:#FF7A3D}
     </div>
   </nav>
 
-  <section style="position: relative; margin: 0 48px; height: clamp(440px, 64vh, 640px); background: #2A221C; border-radius: 24px; display: flex; align-items: flex-end; overflow: hidden">
+  <section data-m="hero" style="position: relative; margin: 0 48px; height: clamp(440px, 64vh, 640px); background: #2A221C; border-radius: 24px; display: flex; align-items: flex-end; overflow: hidden">
     <video src="../media/hero.mp4" poster="../media/hero_poster.jpg" autoplay muted loop playsinline aria-label="Liveausschnitt 6feet2" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6)"></video>
-    <div style="position: relative; padding: 56px; display: flex; flex-direction: column; gap: 16px">
-      <h1 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-size: 120px; line-height: 0.9; letter-spacing: 1px">Vier Jahrzehnte.<br>Eine Tanzfläche.</h1>
-      <p style="margin: 0; font-size: 19px; line-height: 1.5; max-width: 520px; color: #D9CFC2">Livemusik für Hochzeiten, Firmenfeiern und Feste in [REGION].</p>
+    <div data-m="hero-text" style="position: relative; padding: 56px; display: flex; flex-direction: column; gap: 16px">
+      <h1 data-m="h1" style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-size: 120px; line-height: 0.9; letter-spacing: 1px">Vier Jahrzehnte.<br>Eine Tanzfläche.</h1>
+      <p data-m="hero-p" style="margin: 0; font-size: 19px; line-height: 1.5; max-width: 520px; color: #D9CFC2">Livemusik für Hochzeiten, Firmenfeiern und Feste in [REGION].</p>
     </div>
   </section>
 
-  <div style="margin-top: 48px; background: #FF7A3D; color: #17120F; padding: 16px 0; overflow: hidden; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 3px" aria-label="Auszug aus dem Repertoire">
+  <div data-m="band" style="margin-top: 48px; background: #FF7A3D; color: #17120F; padding: 16px 0; overflow: hidden; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 3px" aria-label="Auszug aus dem Repertoire">
     <div class="marquee">
       <span>Dancing Queen · Don't Stop Me Now · Sweet Caroline · Uptown Funk · Hey Jude · Blinding Lights · Livin' on a Prayer · Shallow · Mr. Brightside ·&nbsp;</span>
       <span aria-hidden="true">Dancing Queen · Don't Stop Me Now · Sweet Caroline · Uptown Funk · Hey Jude · Blinding Lights · Livin' on a Prayer · Shallow · Mr. Brightside ·&nbsp;</span>
     </div>
   </div>
 
-  <section style="padding: 96px 48px; display: flex; gap: 48px; align-items: center">
+  <section data-m="about" style="padding: 96px 48px; display: flex; gap: 48px; align-items: center">
     <div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-      <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1">Euer Abend, unser Job.</h2>
+      <h2 data-m="h2" style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1">Euer Abend, unser Job.</h2>
       <p style="margin: 0; color: #D9CFC2; line-height: 1.6; font-size: 18px">Über 150 Songs von den 70ern bis heute, eigene Technik, Hintergrundmusik in den Pausen. Sagt uns Datum und Ort – den Rest klären wir am Telefon.</p>
       <a href="#" style="text-decoration: none; align-self: flex-start; background: #FF7A3D; color: #17120F; padding: 18px 32px; border-radius: 999px; font-weight: 700; font-size: 17px; margin-top: 8px">Jetzt anfragen</a>
     </div>
     <img src="../media/bandfoto.jpg" alt="Die Band 6feet2 im Sonnenuntergang" style="flex: 1 1 0; min-width: 0; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 20px; display: block">
   </section>
 
-  <footer style="padding: 28px 48px; border-top: 2px solid #2A221C; display: flex; justify-content: space-between; gap: 16px; font-size: 14px; color: #A99C8E">
+  <footer data-m="footer" style="padding: 28px 48px; border-top: 2px solid #2A221C; display: flex; justify-content: space-between; gap: 16px; font-size: 14px; color: #A99C8E">
     <div>© 6feet2 · [Region]</div>
-    <div style="display: flex; gap: 24px"><a href="#" style="color: #A99C8E; text-decoration: none">Instagram</a><a href="#" style="color: #A99C8E; text-decoration: none">Impressum</a><a href="#" style="color: #A99C8E; text-decoration: none">Datenschutz</a></div>
+    <div data-m="footer-links" style="display: flex; gap: 24px"><a href="#" style="color: #A99C8E; text-decoration: none">Instagram</a><a href="#" style="color: #A99C8E; text-decoration: none">Impressum</a><a href="#" style="color: #A99C8E; text-decoration: none">Datenschutz</a></div>
   </footer>
 </div>
 <script src="hero-player.js"></script>

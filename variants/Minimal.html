@@ -6,16 +6,31 @@
 <title>6feet2 – E · Minimal Dunkel</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap">
 <style>
-body{margin:0;background:#0B0B0C;min-width:1200px}
+body{margin:0;background:#0B0B0C}
 a{color:#E8E6E1}a:hover{color:#FFFFFF}
+
+/* Mobile */
+@media (max-width: 767px){
+[data-m=nav]{padding:16px 20px !important;gap:12px !important;flex-wrap:wrap !important}
+[data-m=links]{gap:16px !important;font-size:13px !important}
+[data-m=hero]{height:auto !important;min-height:480px !important;padding:48px 0 !important}
+[data-m=hero-text]{padding:0 20px !important}
+[data-m=h1]{font-size:36px !important}
+[data-m=three]{grid-template-columns:1fr !important;padding:64px 20px !important;gap:32px !important}
+[data-m=about]{flex-direction:column !important;padding:0 20px 64px !important;gap:28px !important}
+[data-m=about] img{width:100% !important}
+[data-m=about-p]{font-size:19px !important}
+[data-m=footer]{flex-direction:column !important;padding:20px !important;gap:12px !important}
+[data-m=footer-links]{gap:16px !important}
+}
 </style>
 </head>
 <body>
 <div style="font-family: 'Manrope', system-ui, sans-serif; color: #E8E6E1; background: #0B0B0C; min-height: 100%; box-sizing: border-box">
 
-  <nav style="position: sticky; top: 0; z-index: 20; background: #0B0B0C; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 56px; font-size: 14px; font-weight: 400">
+  <nav data-m="nav" style="position: sticky; top: 0; z-index: 20; background: #0B0B0C; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 56px; font-size: 14px; font-weight: 400">
     <img src="../media/logo_light.png" alt="6feet2 Music" style="height: 26px; width: auto; display: block; opacity: 0.9">
-    <div style="display: flex; align-items: center; gap: 36px; color: #9A9892">
+    <div data-m="links" style="display: flex; align-items: center; gap: 36px; color: #9A9892">
       <a href="#" style="text-decoration: none; color: #9A9892">Repertoire</a>
       <a href="#" style="text-decoration: none; color: #9A9892">Band</a>
       <a href="#" style="text-decoration: none; color: #9A9892">FAQ</a>
@@ -23,16 +38,16 @@ a{color:#E8E6E1}a:hover{color:#FFFFFF}
     </div>
   </nav>
 
-  <section style="position: relative; height: clamp(440px, 64vh, 620px); overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center">
+  <section data-m="hero" style="position: relative; height: clamp(440px, 64vh, 620px); overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center">
     <video src="../media/hero.mp4" poster="../media/hero_poster.jpg" autoplay muted loop playsinline aria-label="Liveausschnitt 6feet2" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.35) saturate(0.6)"></video>
-    <div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 0 48px">
-      <h1 style="margin: 0; font-weight: 300; font-size: 64px; line-height: 1.15; letter-spacing: -1px; max-width: 760px">Livemusik für Abende,<br>die man nicht vergisst.</h1>
+    <div data-m="hero-text" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 0 48px">
+      <h1 data-m="h1" style="margin: 0; font-weight: 300; font-size: 64px; line-height: 1.15; letter-spacing: -1px; max-width: 760px">Livemusik für Abende,<br>die man nicht vergisst.</h1>
       <p style="margin: 0; font-size: 15px; color: #B5B3AD; letter-spacing: 0.5px">Rock &amp; Pop · 1970 bis heute · [Region]</p>
       <a href="#" style="text-decoration: none; margin-top: 12px; border: 1px solid #E8E6E1; padding: 14px 28px; font-size: 14px; font-weight: 600; letter-spacing: 0.5px">Anfrage stellen</a>
     </div>
   </section>
 
-  <section style="padding: 120px 56px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px">
+  <section data-m="three" style="padding: 120px 56px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px">
     <div style="display: flex; flex-direction: column; gap: 12px">
       <div style="font-size: 12px; color: #6E6C66; letter-spacing: 2px; text-transform: uppercase">Hochzeit</div>
       <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #B5B3AD">Dinner, Eröffnungstanz, Party. Ein Abend aus einer Hand.</p>
@@ -47,14 +62,14 @@ a{color:#E8E6E1}a:hover{color:#FFFFFF}
     </div>
   </section>
 
-  <section style="padding: 0 56px 120px; display: flex; gap: 56px; align-items: center">
+  <section data-m="about" style="padding: 0 56px 120px; display: flex; gap: 56px; align-items: center">
     <img src="../media/bandfoto.jpg" alt="Die Band 6feet2 im Sonnenuntergang" style="flex: 3 1 0; min-width: 0; aspect-ratio: 16 / 10; object-fit: cover; display: block; filter: saturate(0.85)">
-    <p style="flex: 2 1 0; min-width: 0; margin: 0; font-size: 22px; font-weight: 300; line-height: 1.5; color: #E8E6E1">Benannt nach 1,88 m – der Deckenhöhe unseres ersten Proberaums. Seitdem spielen wir, wo es höher ist.</p>
+    <p data-m="about-p" style="flex: 2 1 0; min-width: 0; margin: 0; font-size: 22px; font-weight: 300; line-height: 1.5; color: #E8E6E1">Benannt nach 1,88 m – der Deckenhöhe unseres ersten Proberaums. Seitdem spielen wir, wo es höher ist.</p>
   </section>
 
-  <footer style="padding: 28px 56px; border-top: 1px solid #1E1E21; display: flex; justify-content: space-between; gap: 16px; font-size: 13px; color: #6E6C66">
+  <footer data-m="footer" style="padding: 28px 56px; border-top: 1px solid #1E1E21; display: flex; justify-content: space-between; gap: 16px; font-size: 13px; color: #6E6C66">
     <div>6feet2 · [Region]</div>
-    <div style="display: flex; gap: 28px"><a href="#" style="color: #6E6C66; text-decoration: none">Instagram</a><a href="#" style="color: #6E6C66; text-decoration: none">Impressum</a><a href="#" style="color: #6E6C66; text-decoration: none">Datenschutz</a></div>
+    <div data-m="footer-links" style="display: flex; gap: 28px"><a href="#" style="color: #6E6C66; text-decoration: none">Instagram</a><a href="#" style="color: #6E6C66; text-decoration: none">Impressum</a><a href="#" style="color: #6E6C66; text-decoration: none">Datenschutz</a></div>
   </footer>
 </div>
 <script src="hero-player.js"></script>

@@ -6,16 +6,34 @@
 <title>6feet2 – D · Setlist-Poster</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap">
 <style>
-body{margin:0;background:#FFFFFF;min-width:1200px}
+body{margin:0;background:#FFFFFF}
 a{color:#111111}a:hover{color:#D62828}
+
+/* Mobile */
+@media (max-width: 767px){
+[data-m=nav]{padding:14px 20px !important;gap:12px !important;flex-wrap:wrap !important}
+[data-m=logo]{height:28px !important}
+[data-m=links]{gap:14px !important;font-size:13px !important}
+[data-m=links] a:last-child{padding:9px 14px !important}
+[data-m=hero]{grid-template-columns:1fr !important;padding:20px 20px 0 !important;gap:24px !important}
+[data-m=hero-text]{gap:20px !important}
+[data-m=chips]{flex-wrap:wrap !important}
+[data-m=h1]{font-size:84px !important}
+[data-m=hero-p]{font-size:16px !important}
+[data-m=vid]{aspect-ratio:4 / 5 !important;border-radius:20px !important}
+[data-m=about]{grid-template-columns:1fr !important;padding:56px 20px !important;gap:28px !important}
+[data-m=h2]{font-size:40px !important}
+[data-m=footer]{flex-direction:column !important;padding:20px !important;gap:12px !important}
+[data-m=footer-links]{gap:16px !important}
+}
 </style>
 </head>
 <body>
 <div style="font-family: 'Inter', system-ui, sans-serif; color: #111111; background: #FFFFFF; min-height: 100%; box-sizing: border-box">
 
-  <nav style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 48px; font-size: 15px; font-weight: 500">
-    <img src="../media/logo_dark.png" alt="6feet2 Music" style="height: 32px; width: auto; display: block">
-    <div style="display: flex; align-items: center; gap: 28px">
+  <nav data-m="nav" style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 48px; font-size: 15px; font-weight: 500">
+    <img data-m="logo" src="../media/logo_dark.png" alt="6feet2 Music" style="height: 32px; width: auto; display: block">
+    <div data-m="links" style="display: flex; align-items: center; gap: 28px">
       <a href="#" style="text-decoration: none">Repertoire</a>
       <a href="#" style="text-decoration: none">Band</a>
       <a href="#" style="text-decoration: none">FAQ</a>
@@ -23,28 +41,28 @@ a{color:#111111}a:hover{color:#D62828}
     </div>
   </nav>
 
-  <section style="padding: 32px 48px 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: stretch">
-    <div style="display: flex; flex-direction: column; justify-content: flex-end; gap: 24px">
-      <div style="display: flex; gap: 8px">
+  <section data-m="hero" style="padding: 32px 48px 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: stretch">
+    <div data-m="hero-text" style="display: flex; flex-direction: column; justify-content: flex-end; gap: 24px">
+      <div data-m="chips" style="display: flex; gap: 8px">
         <span style="border: 1px solid #D9D9D9; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 500">Hochzeit</span>
         <span style="border: 1px solid #D9D9D9; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 500">Firmenfeier</span>
         <span style="border: 1px solid #D9D9D9; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 500">Fest</span>
         <span style="border: 1px solid #D9D9D9; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 500; color: #6B6B6B">[Region]</span>
       </div>
-      <h1 style="margin: 0; font-family: 'Anton', sans-serif; font-size: 156px; line-height: 0.88; text-transform: uppercase; letter-spacing: -2px">Laut.<br>Lieb.<br><span style="color: #D62828">Live.</span></h1>
-      <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #4A4A4A; max-width: 440px">Rock und Pop aus fünf Jahrzehnten. Wir spielen, was die Leute mitsingen – und bringen Sound und Licht gleich mit.</p>
+      <h1 data-m="h1" style="margin: 0; font-family: 'Anton', sans-serif; font-size: 156px; line-height: 0.88; text-transform: uppercase; letter-spacing: -2px">Laut.<br>Lieb.<br><span style="color: #D62828">Live.</span></h1>
+      <p data-m="hero-p" style="margin: 0; font-size: 19px; line-height: 1.55; color: #4A4A4A; max-width: 440px">Rock und Pop aus fünf Jahrzehnten. Wir spielen, was die Leute mitsingen – und bringen Sound und Licht gleich mit.</p>
       <a href="#" style="text-decoration: none; align-self: flex-start; background: #D62828; color: #FFFFFF; padding: 18px 30px; border-radius: 999px; font-weight: 600; font-size: 16px">Datum anfragen →</a>
     </div>
-    <div style="position: relative; min-height: 0; border-radius: 28px; overflow: hidden; background: #111111">
+    <div data-m="vid" style="position: relative; min-height: 0; border-radius: 28px; overflow: hidden; background: #111111">
       <video src="../media/hero.mp4" poster="../media/hero_poster.jpg" autoplay muted loop playsinline aria-label="Liveausschnitt 6feet2" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.15) contrast(1.05)"></video>
       <span style="position: absolute; left: 20px; top: 20px; background: #FFFFFF; color: #111111; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 999px; background: #D62828"></span>Live · Tanzfläche</span>
     </div>
   </section>
 
-  <section style="padding: 96px 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: center">
+  <section data-m="about" style="padding: 96px 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: center">
     <img src="../media/bandfoto.jpg" alt="Die Band 6feet2 im Sonnenuntergang" style="width: 100%; aspect-ratio: 16 / 11; object-fit: cover; border-radius: 28px; display: block">
     <div style="display: flex; flex-direction: column; gap: 20px">
-      <h2 style="margin: 0; font-family: 'Anton', sans-serif; font-size: 56px; line-height: 0.95; text-transform: uppercase">Fünf Jahrzehnte,<br>eine Setlist.</h2>
+      <h2 data-m="h2" style="margin: 0; font-family: 'Anton', sans-serif; font-size: 56px; line-height: 0.95; text-transform: uppercase">Fünf Jahrzehnte,<br>eine Setlist.</h2>
       <div style="display: flex; flex-direction: column; font-size: 17px">
         <div style="display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-bottom: 1px solid #E6E6E6"><span style="font-weight: 500">Don't Stop Me Now</span><span style="color: #8A8A8A">1978</span></div>
         <div style="display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-bottom: 1px solid #E6E6E6"><span style="font-weight: 500">Livin' on a Prayer</span><span style="color: #8A8A8A">1986</span></div>
@@ -56,9 +74,9 @@ a{color:#111111}a:hover{color:#D62828}
     </div>
   </section>
 
-  <footer style="padding: 24px 48px; border-top: 1px solid #E6E6E6; display: flex; justify-content: space-between; gap: 16px; font-size: 14px; color: #6B6B6B">
+  <footer data-m="footer" style="padding: 24px 48px; border-top: 1px solid #E6E6E6; display: flex; justify-content: space-between; gap: 16px; font-size: 14px; color: #6B6B6B">
     <div>© 6feet2 · [Region]</div>
-    <div style="display: flex; gap: 24px"><a href="#" style="color: #6B6B6B; text-decoration: none">Instagram</a><a href="#" style="color: #6B6B6B; text-decoration: none">Impressum</a><a href="#" style="color: #6B6B6B; text-decoration: none">Datenschutz</a></div>
+    <div data-m="footer-links" style="display: flex; gap: 24px"><a href="#" style="color: #6B6B6B; text-decoration: none">Instagram</a><a href="#" style="color: #6B6B6B; text-decoration: none">Impressum</a><a href="#" style="color: #6B6B6B; text-decoration: none">Datenschutz</a></div>
   </footer>
 </div>
 <script src="hero-player.js"></script>

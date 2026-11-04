@@ -6,7 +6,7 @@
 <title>6feet2 – G · Farbenfroh Gelb</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&amp;family=DM+Sans:wght@400;500;700&amp;display=swap">
 <style>
-body{margin:0;background:#FFD233;min-width:1200px}
+body{margin:0;background:#FFD233}
 a{color:#1A1A1A}a:hover{color:#FFFFFF}
 /* Flip-Cards: on-hover dreht sich die Karte auf die Rueckseite */
 .flip{perspective:1600px;text-decoration:none;color:inherit}
@@ -21,14 +21,41 @@ a{color:#1A1A1A}a:hover{color:#FFFFFF}
 .hero-card p{transition:color .5s ease}
 .hero-card:hover{background:#FF4F9A !important;color:#1A1A1A !important;transform:scale(1.015)}
 .hero-card:hover p{color:#1A1A1A !important}
+
+/* Mobile */
+@media (max-width: 767px){
+[data-m=nav]{padding:14px 20px !important;gap:12px !important;flex-wrap:wrap !important}
+[data-m=logo]{height:28px !important}
+[data-m=links]{flex-wrap:wrap !important;gap:6px !important}
+[data-m=links] a{padding:9px 14px !important;font-size:13px !important}
+[data-m=bento]{grid-template-columns:1fr !important;grid-auto-rows:auto !important;padding:16px 16px 0 !important;gap:12px !important}
+[data-m=bento] > *{grid-column:auto !important;grid-row:auto !important}
+[data-m=hcard]{padding:24px !important;gap:20px !important;border-radius:20px !important}
+[data-m=hcard] p{font-size:16px !important}
+[data-m=h1]{font-size:40px !important;letter-spacing:-1px !important}
+[data-m=vid]{aspect-ratio:4 / 3 !important;border-radius:20px !important}
+[data-m=bento] .flip{height:170px}
+[data-m=cta]{height:150px}
+[data-m=cta] .front span:first-child{font-size:22px !important}
+[data-m=cta] .front span:last-child{width:56px !important;height:56px !important;font-size:24px !important}
+[data-m=cta] .back span:first-child{font-size:15px !important}
+.flip .face{padding:20px !important;border-radius:20px !important}
+[data-m=about]{grid-template-columns:1fr !important;padding:48px 16px !important;gap:12px !important}
+[data-m=about] img{aspect-ratio:4 / 3 !important;border-radius:20px !important}
+[data-m=about] .flip{height:360px}
+[data-m=h2]{font-size:26px !important}
+[data-m=songs]{font-size:17px !important}
+[data-m=footer]{flex-direction:column !important;padding:20px !important;gap:12px !important}
+[data-m=footer-links]{gap:16px !important}
+}
 </style>
 </head>
 <body>
 <div style="font-family: 'DM Sans', system-ui, sans-serif; color: #1A1A1A; background: #FFD233; min-height: 100%; box-sizing: border-box">
 
-  <nav style="position: sticky; top: 0; z-index: 20; background: #FFD233; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 40px; font-size: 15px; font-weight: 700">
-    <img src="../media/logo_dark.png" alt="6feet2 Music" style="height: 34px; width: auto; display: block">
-    <div style="display: flex; align-items: center; gap: 10px">
+  <nav data-m="nav" style="position: sticky; top: 0; z-index: 20; background: #FFD233; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 40px; font-size: 15px; font-weight: 700">
+    <img data-m="logo" src="../media/logo_dark.png" alt="6feet2 Music" style="height: 34px; width: auto; display: block">
+    <div data-m="links" style="display: flex; align-items: center; gap: 10px">
       <a href="#" style="text-decoration: none; background: #FF4F9A; color: #1A1A1A; padding: 12px 20px; border-radius: 999px">Repertoire</a>
       <a href="#" style="text-decoration: none; background: #2F6BFF; color: #FFFFFF; padding: 12px 20px; border-radius: 999px">Band</a>
       <a href="#" style="text-decoration: none; background: #22D47E; color: #1A1A1A; padding: 12px 20px; border-radius: 999px">FAQ</a>
@@ -36,12 +63,12 @@ a{color:#1A1A1A}a:hover{color:#FFFFFF}
     </div>
   </nav>
 
-  <section style="padding: 24px 40px 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: 120px; gap: 16px">
-    <div class="hero-card" style="grid-column: span 7; grid-row: span 4; background: #1A1A1A; color: #FFD233; border-radius: 32px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between">
-      <h1 style="margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 72px; line-height: 0.98; letter-spacing: -2px">Vier Jahr­zehnte.<br>Eine Party.</h1>
+  <section data-m="bento" style="padding: 24px 40px 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: 120px; gap: 16px">
+    <div data-m="hcard" class="hero-card" style="grid-column: span 7; grid-row: span 4; background: #1A1A1A; color: #FFD233; border-radius: 32px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between">
+      <h1 data-m="h1" style="margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 900; font-size: 72px; line-height: 0.98; letter-spacing: -2px">Vier Jahr­zehnte.<br>Eine Party.</h1>
       <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #FFFFFF; max-width: 460px">Rock und Pop live für Hochzeiten, Firmenfeiern und Feste in [REGION]. Von Queen bis Dua Lipa.</p>
     </div>
-    <div style="grid-column: span 5; grid-row: span 4; border-radius: 32px; overflow: hidden; background: #2F6BFF; position: relative">
+    <div data-m="vid" style="grid-column: span 5; grid-row: span 4; border-radius: 32px; overflow: hidden; background: #2F6BFF; position: relative">
       <video src="../media/hero.mp4" poster="../media/hero_poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="Liveausschnitt 6feet2" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.4) contrast(1.1)"></video>
     </div>
 
@@ -71,7 +98,7 @@ a{color:#1A1A1A}a:hover{color:#FFFFFF}
       </div>
     </div>
 
-    <a href="#" class="flip" style="grid-column: span 6; grid-row: span 2">
+    <a data-m="cta" href="#" class="flip" style="grid-column: span 6; grid-row: span 2">
       <div class="inner">
         <div class="face front" style="background: #FFFFFF; color: #1A1A1A; flex-direction: row; align-items: center; gap: 20px">
           <span style="font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1">Ist euer Datum noch frei?</span>
@@ -85,12 +112,12 @@ a{color:#1A1A1A}a:hover{color:#FFFFFF}
     </a>
   </section>
 
-  <section style="padding: 80px 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch">
+  <section data-m="about" style="padding: 80px 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch">
     <img src="../media/bandfoto.jpg" alt="Die Band 6feet2 im Sonnenuntergang" style="width: 100%; height: 100%; aspect-ratio: 16 / 11; object-fit: cover; border-radius: 32px; display: block">
     <div class="flip">
       <div class="inner">
         <div class="face front" style="background: #2F6BFF; color: #FFFFFF; padding: 40px; gap: 24px">
-          <h2 style="margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 36px; line-height: 1.05">Die Band, bei der niemand sitzen bleibt.</h2>
+          <h2 data-m="h2" style="margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 36px; line-height: 1.05">Die Band, bei der niemand sitzen bleibt.</h2>
           <div style="display: flex; flex-wrap: wrap; gap: 8px">
             <span style="background: #FFFFFF; color: #1A1A1A; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 700">70er</span>
             <span style="background: #FFFFFF; color: #1A1A1A; border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 700">80er</span>
@@ -101,7 +128,7 @@ a{color:#1A1A1A}a:hover{color:#FFFFFF}
         </div>
         <div class="face back" style="background: #FF4F9A; color: #1A1A1A; padding: 40px; gap: 24px">
           <div style="font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase">Setlist-Auszug</div>
-          <div style="display: flex; flex-direction: column; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.6">
+          <div data-m="songs" style="display: flex; flex-direction: column; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.6">
             <span>Don't Stop Me Now</span><span>Livin' on a Prayer</span><span>Wonderwall</span><span>Uptown Funk</span><span>Blinding Lights</span><span>Flowers</span>
           </div>
           <a href="#" style="text-decoration: none; align-self: flex-start; background: #1A1A1A; color: #FFD233; padding: 14px 22px; border-radius: 999px; font-weight: 700">Alle 150 Songs →</a>
@@ -110,9 +137,9 @@ a{color:#1A1A1A}a:hover{color:#FFFFFF}
     </div>
   </section>
 
-  <footer style="padding: 24px 40px; display: flex; justify-content: space-between; gap: 16px; font-size: 14px; font-weight: 500">
+  <footer data-m="footer" style="padding: 24px 40px; display: flex; justify-content: space-between; gap: 16px; font-size: 14px; font-weight: 500">
     <div>© 6feet2 · [Region]</div>
-    <div style="display: flex; gap: 24px"><a href="#" style="text-decoration: none">Instagram</a><a href="#" style="text-decoration: none">Impressum</a><a href="#" style="text-decoration: none">Datenschutz</a></div>
+    <div data-m="footer-links" style="display: flex; gap: 24px"><a href="#" style="text-decoration: none">Instagram</a><a href="#" style="text-decoration: none">Impressum</a><a href="#" style="text-decoration: none">Datenschutz</a></div>
   </footer>
 </div>
 <script src="hero-player.js"></script>
