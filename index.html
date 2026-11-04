@@ -19,22 +19,34 @@
   .tools { display: flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
   .tools button { background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 12px; cursor: pointer; font-family: inherit; }
   .tools button[aria-pressed="true"] { color: var(--fg); border-color: var(--fg); }
-  .tools a { color: var(--muted); font-size: 12px; text-decoration: none; margin-left: 8px; }
-  .tools a:hover { color: var(--fg); }
   main { flex: 1; display: flex; justify-content: center; background: #0E0E11; overflow: auto; }
   iframe { border: 0; background: #fff; width: 100%; height: 100%; display: block; transition: width 0.25s; }
   main[data-width="phone"] iframe { width: 390px; }
+  .toggle { display: none; }
+  /* Handy: Varianten-Auswahl einklappbar, Desktop/Phone-Schalter ausgeblendet */
+  @media (max-width: 767px) {
+    header { gap: 8px 10px; padding: 8px 12px; }
+    header .brand { font-size: 13px; margin-right: 0; }
+    .toggle { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; background: transparent; color: var(--fg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; }
+    .toggle::after { content: "▾"; transition: transform 0.2s; }
+    .toggle[aria-expanded="true"]::after { transform: rotate(180deg); }
+    .tabs { display: none; flex-basis: 100%; }
+    header[data-open="true"] .tabs { display: flex; }
+    .tabs button { padding: 6px 11px; font-size: 12px; }
+    .spacer, .tools button { display: none; }
+    main[data-width="phone"] iframe { width: 100%; }
+  }
 </style>
 </head>
 <body>
-<header>
+<header id="header" data-open="false">
   <span class="brand">6feet2 · Design-Varianten</span>
+  <button class="toggle" id="toggle" type="button" aria-expanded="false" aria-controls="tabs">Varianten</button>
   <nav class="tabs" id="tabs" aria-label="Varianten"></nav>
   <span class="spacer"></span>
   <div class="tools">
     <button data-w="full" aria-pressed="true">Desktop</button>
     <button data-w="phone">Phone</button>
-    <a id="open" href="#" target="_blank" rel="noopener">Variante allein öffnen ↗</a>
   </div>
 </header>
 <main id="main" data-width="full">
@@ -50,20 +62,23 @@
     { id: 'F', file: 'Bunt', label: 'F · Farbenfroh' },
     { id: 'F0', file: 'BuntGelb', label: 'G · Farbenfroh Gelb' }
   ];
-  var tabs = document.getElementById('tabs'), frame = document.getElementById('frame'), open = document.getElementById('open'), main = document.getElementById('main');
+  var tabs = document.getElementById('tabs'), frame = document.getElementById('frame'), main = document.getElementById('main');
   function show(id) {
     var v = variants.find(function (x) { return x.id === id; }) || variants[0];
     frame.src = 'variants/' + v.file + '.html';
-    open.href = frame.src;
     document.title = '6feet2 – ' + v.label;
+    toggle.textContent = v.label;
     tabs.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-current', b.dataset.id === v.id ? 'true' : 'false'); });
     if (location.hash !== '#' + v.id) history.replaceState(null, '', '#' + v.id);
   }
   variants.forEach(function (v) {
     var b = document.createElement('button'); b.textContent = v.label; b.dataset.id = v.id;
-    b.addEventListener('click', function () { show(v.id); });
+    b.addEventListener('click', function () { show(v.id); setOpen(false); });
     tabs.appendChild(b);
   });
+  var header = document.getElementById('header'), toggle = document.getElementById('toggle');
+  function setOpen(open) { header.dataset.open = open ? 'true' : 'false'; toggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  toggle.addEventListener('click', function () { setOpen(header.dataset.open !== 'true'); });
   document.querySelectorAll('.tools button[data-w]').forEach(function (b) {
     b.addEventListener('click', function () {
       main.dataset.width = b.dataset.w;
